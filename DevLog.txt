@@ -1,0 +1,8 @@
+
+What a great DevLog!
+
+(5/28)
+-Decided: We will only be asking binary questions.
+-Decided: After every time an attribute is added to the list of attributes, a check will be run to test the efficiency of the tree, and the tree will be reorganized if a more efficient tree is possible. Efficiency will be a function of the number of attributes in each category of attributes.
+-Looked into processing; oppurtunities exist to parse strings from a text file
+-Discussed what classes we will have. There will probably be at least a class for a question, an object, and a tree.
