@@ -6,3 +6,7 @@ What a great DevLog!
 -Decided: After every time an attribute is added to the list of attributes, a check will be run to test the efficiency of the tree, and the tree will be reorganized if a more efficient tree is possible. Efficiency will be a function of the number of attributes in each category of attributes.
 -Looked into processing; oppurtunities exist to parse strings from a text file
 -Discussed what classes we will have. There will probably be at least a class for a question, an object, and a tree.
+
+(5/29)
+-Discussed the way in which the constructor will work. The constructor will look for a txt file, and if it exists, the constructor will create a tree out of it. If it doesn't, the constructor will create a basic default tree.
+-How will we create the tree? More or less undecided. Potential change in the definition of an attritbute.
