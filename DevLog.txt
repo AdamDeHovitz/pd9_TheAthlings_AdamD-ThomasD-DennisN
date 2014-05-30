@@ -10,3 +10,11 @@ What a great DevLog!
 (5/29)
 -Discussed the way in which the constructor will work. The constructor will look for a txt file, and if it exists, the constructor will create a tree out of it. If it doesn't, the constructor will create a basic default tree.
 -How will we create the tree? More or less undecided. Potential change in the definition of an attritbute.
+
+(5/30)
+-FINAL FORMAT FOR PROJECT
+-Attributes will be equal to questions
+-Each object will have an array of simple 1s and 0s, where the index will correspond to an attribute, with the 1 or 0 representing a yes or no to whether or not the object has that attribute.
+-After an object and attribute is added to the txt file containing objects and attributes, the user will then go through each object and declare whether or not an object has that attribute. This will be for each object. Additionally, for reorganization of the tree, there will be a helper method adding up every number in the same index for the list of attributes, and find which one is closest to the number of objects over 2, in order to make the tree more efficient.
+-Every class must have a test class!
+-Tadduda will be concierge
