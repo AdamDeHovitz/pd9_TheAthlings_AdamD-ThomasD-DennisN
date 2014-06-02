@@ -16,6 +16,7 @@ public class TreeObjectTest
 		testObject1.setAttributes(testArray);
 		System.out.println(testObject1.getAttributes().toString()); //"[1,2,3]"
 		System.out.println(testObject1.getName().toString()); //"Null"
+		System.out.println(testObject1);
 		testObject2.clearAttributes();
 		System.out.println(testObject1.getAttributes().toString()); //"[]"
 
@@ -28,6 +29,7 @@ public class TreeObjectTest
 		testObject2.setAttributes(testArray);
 		System.out.println(testObject2.getAttributes().toString()); //"[1,2,3,4,5]"
 		System.out.println(testObject2.getName().toString()); //"Object 2"
+		System.out.println(testObject2);
 		testObject2.clearAttributes();
 		System.out.println(testObject2.getAttributes().toString()); //"[]"
 

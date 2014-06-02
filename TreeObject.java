@@ -23,7 +23,7 @@ public class TreeObject
 	{
 		return _name;
 	}
-	
+
 	public ArrayList<Integer> setAttributes(ArrayList<Integer> attributesInput)
 	{
 		ArrayList<Integer> oldAtr = _attributes;
@@ -36,6 +36,13 @@ public class TreeObject
 		ArrayList<Integer> oldAtr = _attributes;
 		_attributes = new ArrayList<Integer>();
 		return oldAtr;
+	}
+
+	public String toString()
+	{
+		String returnString = "";
+		returnString = "|Name:" + _name + ",Attributes:" + _attributes + "|";
+		return returnString;
 	}
 
 }
