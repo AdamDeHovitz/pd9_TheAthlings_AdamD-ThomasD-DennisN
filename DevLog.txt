@@ -18,3 +18,9 @@ What a great DevLog!
 -After an object and attribute is added to the txt file containing objects and attributes, the user will then go through each object and declare whether or not an object has that attribute. This will be for each object. Additionally, for reorganization of the tree, there will be a helper method adding up every number in the same index for the list of attributes, and find which one is closest to the number of objects over 2, in order to make the tree more efficient.
 -Every class must have a test class!
 -Tadduda will be concierge
+
+(6/2)
+-DIVISION OF LABOR:
+-Dennis: In charge of interpreting and adding to the txt file storing all objects and attributes. Due (6/13)
+-Adam: In charge of building, maintinaing, and traversing the tree from the ArrayLists output by Dennis's methods. Due (6/13)
+-Thomas: In charge of GUI, reading the tree, and updating objects with attributes. Due (6/16)
