@@ -24,3 +24,4 @@ What a great DevLog!
 -Dennis: In charge of interpreting and adding to the txt file storing all objects and attributes. Due (6/13)
 -Adam: In charge of building, maintinaing, and traversing the tree from the ArrayLists output by Dennis's methods. Due (6/13)
 -Thomas: In charge of GUI, reading the tree, and updating objects with attributes. Due (6/16)
+-Dennis completed methods that write to and read from the txt file.
