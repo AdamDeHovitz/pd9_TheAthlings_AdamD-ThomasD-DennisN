@@ -1,0 +1,5 @@
+Is this object furry?,Is this object an animal?,Is this object a pet?
+Null
+
+Object 2
+1,2,3

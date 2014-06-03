@@ -1,0 +1,5 @@
+Is this object Green?
+John
+1,0,0
+Dennis
+0,0,1
