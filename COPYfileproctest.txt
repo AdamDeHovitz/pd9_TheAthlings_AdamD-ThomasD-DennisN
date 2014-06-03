@@ -1,0 +1,7 @@
+Is this object blue?,Is this object red?,Is this object green?
+Adam
+1,0,0
+Thomas
+0,1,0
+Dennis
+0,0,1

@@ -1,6 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.PrintWriter;
 
 public class FileProc
 {
@@ -54,9 +55,9 @@ public class FileProc
 					((ArrayList)returnValue[1]).add(new TreeObject(objectName, attrList));		
 				}
 				}
-			catch (Exception ex)
+			catch (Exception e)
 			{
-
+				//We need to think of a way to handle exceptions
 			}
 			return returnValue;
 		}			
@@ -64,5 +65,51 @@ public class FileProc
 		{
 			return new Object[]{null, null};
 		}
+	}
+
+	public static String insertCommasBetween(ArrayList arrayListToRead)
+	{
+		String returnString = "";
+		for (int i = 0; i < arrayListToRead.size();i++)
+		{
+			if (i == arrayListToRead.size()-1)
+			{
+				returnString += "" + arrayListToRead.get(i);
+			}
+			else
+			{
+				returnString += "" + arrayListToRead.get(i) + ",";
+			}
+		}
+		return returnString;
+	}
+
+	//this function produces a file that can later be read to create the lists that are stored in it
+	public static void saveToFile(String filename, Object[] listsToSave)
+	{
+		try
+		{
+			File fileToWrite = new File(filename);
+			PrintWriter fileWriter = new PrintWriter(fileToWrite);
+			ArrayList<String> attributeList = (ArrayList<String>) listsToSave[0];
+			ArrayList<TreeObject> objectList = (ArrayList<TreeObject>) listsToSave[1];
+			//Write the attributes to the file
+			fileWriter.println(insertCommasBetween(attributeList));
+			//Write the objects to the file
+			TreeObject objectToWrite;
+			for (int i = 0; i < objectList.size(); i++)
+			{
+				objectToWrite = objectList.get(i);
+				fileWriter.println((String)objectToWrite.getName());
+				fileWriter.println(insertCommasBetween((ArrayList)objectToWrite.getAttributes()));
+			}
+			fileWriter.close();
+
+		}
+		catch (Exception e)
+		{
+			//We need to think of a way to handle exceptions
+		}
+
 	}
 }
