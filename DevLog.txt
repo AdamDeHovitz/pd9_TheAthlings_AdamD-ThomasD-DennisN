@@ -25,3 +25,7 @@ What a great DevLog!
 -Adam: In charge of building, maintinaing, and traversing the tree from the ArrayLists output by Dennis's methods. Due (6/13)
 -Thomas: In charge of GUI, reading the tree, and updating objects with attributes. Due (6/16)
 -Dennis completed methods that write to and read from the txt file.
+
+(6/3)
+-We will run a check to see if an attribute needs to be added as well when the computer gets the guess wrong. The user will define all of the attributes for the new objects, and then, if and only if the resulting list of attributes is identical to that of some other object, the user will be asked to add a differentiating attribute and run each object by this test.
+-Dennis continues to bully Thomas.
