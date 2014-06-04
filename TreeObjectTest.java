@@ -15,6 +15,7 @@ public class TreeObjectTest
 		System.out.println(testObject1.getName().toString()); //"Null"
 		testObject1.setAttributes(testArray);
 		System.out.println(testObject1.getAttributes().toString()); //"[1,2,3]"
+		System.out.println(testObject1.getAttributeAt(1)); //"2"
 		System.out.println(testObject1.getName().toString()); //"Null"
 		System.out.println(testObject1);
 		testObject2.clearAttributes();

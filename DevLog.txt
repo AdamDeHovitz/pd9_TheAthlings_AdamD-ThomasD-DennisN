@@ -29,3 +29,8 @@ What a great DevLog!
 (6/3)
 -We will run a check to see if an attribute needs to be added as well when the computer gets the guess wrong. The user will define all of the attributes for the new objects, and then, if and only if the resulting list of attributes is identical to that of some other object, the user will be asked to add a differentiating attribute and run each object by this test.
 -Dennis continues to bully Thomas.
+
+(6/4)
+-Debugging and testing to obtain functional code.
+-Potential break in processing: with some .jar manipulation, it may be possible to run pure java code in processing.
+-Exposed Dennis' code for what it really is.
