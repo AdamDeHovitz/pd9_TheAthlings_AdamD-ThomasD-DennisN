@@ -9,18 +9,28 @@ public class Tree{
     }
 
     public void treeCreate(ArrayList<String> attributes, ArrayList<TreeObject> things){
+	//	System.out.println(things.get(2));
 	int[] counter = new int[attributes.size()];
+	for (int i = 0; i < counter.length; i++)
+	    {
+		counter[i] = 0;
+	    }
 	for (TreeObject paul: things){
 	    ArrayList<Integer> attribs = paul.getAttributes();
-	    int x = 0;
-	    for(; x < things.size(); x++){
+	    //System.out.println(attribs);
+	    for(int x = 0; x < counter.length; x++){
+		//System.out.println(x);
 		if (attribs.get(x) == 1){
+		    //System.out.print(x);
 		    counter[x] = counter[x] + 1;
 		}
 	    }
 	    
 	}
-    
+	/*for (int q: counter){
+	    System.out.print(q + ", ");
+	    }*/
+	
 	_root = treeHelper(counter, attributes, things); //Starts the tree;
 	
     }
@@ -31,18 +41,22 @@ public class Tree{
 	    return node;
 	}
 	int x = things.size() / 2;
+	//for (int q: counter){
+	//  System.out.print(q + ", ");
+	//}
 	int mostMid = 0; 
 	for (int d = 1; d < counter.length; d++){ 
 	    if ( Math.abs(x - counter[d]) < Math.abs( x - counter[mostMid])){  //Find the most divisive question
-		mostMid = d;
+		mostMid = d; 
 	    }
 	}
+	//System.out.println(mostMid);
 	counter[mostMid] = 0;
 	node.setQuestion(attributes.get(mostMid));
 	ArrayList<TreeObject> yes = new ArrayList<TreeObject>();
 	ArrayList<TreeObject> no = new ArrayList<TreeObject>();
 	for (TreeObject henry : things){
-	    if( henry.getAttributeAt(mostMid) = 1){
+	    if( henry.getAttributeAt(mostMid) == 1){
 		yes.add(henry);}
 	    else{
 		no.add(henry);
@@ -50,8 +64,8 @@ public class Tree{
 	}
 	
 
-	node.setRight(counter, attributes, yes); //Creating children
-	node.setLeft(counter, attributes, no);   //Creating children
+	node.setRight(treeHelper(counter, attributes, yes)); //Creating children
+	node.setLeft(treeHelper(counter, attributes, no));   //Creating children
 
 	return node;
     }

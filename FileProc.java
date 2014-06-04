@@ -20,7 +20,7 @@ public class FileProc
 			//System.out.println("i: " + i + " commaI: " + indexOfComma);
 			if (indexOfComma > 0)
 			{
-				arrayListToModify.add(stringToBreak.substring(i,indexOfComma));
+			    arrayListToModify.add(Integer.parseInt(stringToBreak.substring(i,indexOfComma)));
 				i = indexOfComma;
 			}
 			else

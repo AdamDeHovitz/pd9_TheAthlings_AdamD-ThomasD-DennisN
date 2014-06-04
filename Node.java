@@ -21,7 +21,7 @@ public class Node{
     }
     public void setQuestion(String add){
 	isQuestion = true;
-	ask = add;
+	question = add;
     }
     public TreeObject getTreeObject(){
 	return thing;
