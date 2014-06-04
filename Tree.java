@@ -21,26 +21,26 @@ public class Tree{
 	    
 	}
     
-	_root = treeHelper(counter, things, attributes,); //Starts the tree;
+	_root = treeHelper(counter, attributes, things); //Starts the tree;
 	
     }
     public Node treeHelper( int[] counter, ArrayList<String> attributes, ArrayList<TreeObject> things){
 	Node node = new Node();
 	if (things.size() == 1){   //If there is one object left, place it in as a leaf
-	    node.setTreeObject(things.remove());
+	    node.setTreeObject(things.remove(0));
 	    return node;
 	}
 	int x = things.size() / 2;
 	int mostMid = 0; 
 	for (int d = 1; d < counter.length; d++){ 
-	    if ( abs(x - counter[d]) < abs( x - counter[mostMid])){  //Find the most divisive question
+	    if ( Math.abs(x - counter[d]) < Math.abs( x - counter[mostMid])){  //Find the most divisive question
 		mostMid = d;
 	    }
 	}
 	counter[mostMid] = 0;
 	node.setQuestion(attributes.get(mostMid));
-	ArrayList<TreeObjects> yes = new ArrayList<TreeObjects>();
-	ArrayList<TreeObjects> no = new ArrayList<TreeObjects>();
+	ArrayList<TreeObject> yes = new ArrayList<TreeObject>();
+	ArrayList<TreeObject> no = new ArrayList<TreeObject>();
 	for (TreeObject henry : things){
 	    if( henry.getAttributeAt(mostMid) = 1){
 		yes.add(henry);}

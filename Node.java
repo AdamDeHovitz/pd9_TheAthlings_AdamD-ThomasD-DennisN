@@ -26,15 +26,15 @@ public class Node{
     public TreeObject getTreeObject(){
 	return thing;
     }
-    public Question getQuestion(){
+    public String getQuestion(){
 	return question;
     }
 
-    public TreeNode getLeft() 
+    public Node getLeft() 
     {
 	return left;
     }
-    public TreeNode getRight() 
+    public Node getRight() 
     {
 	return right;
     }

@@ -19,6 +19,9 @@ public class TreeObject
     {
 	return _attributes;
     }
+    public int getAttributeAt( int index){
+	return _attributes.get(index);
+    }
     public String getName()
     {
 	return _name;
