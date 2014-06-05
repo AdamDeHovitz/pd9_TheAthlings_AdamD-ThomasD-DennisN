@@ -7,14 +7,8 @@ public class Tree{
 
     public Tree(){
     }
-
-    public void treeCreate(ArrayList<String> attributes, ArrayList<TreeObject> things){
-	//	System.out.println(things.get(2));
-	int[] counter = new int[attributes.size()];
-	for (int i = 0; i < counter.length; i++)
-	    {
-		counter[i] = 0;
-	    }
+    public void counterUpdate(int[] counter, ArrayList<TreeObject> things){
+	
 	for (TreeObject paul: things){
 	    ArrayList<Integer> attribs = paul.getAttributes();
 	    //System.out.println(attribs);
@@ -27,15 +21,24 @@ public class Tree{
 	    }
 	    
 	}
-	/*for (int q: counter){
-	    System.out.print(q + ", ");
-	    }*/
+    }
 	
-	_root = treeHelper(counter, attributes, things); //Starts the tree;
+
+    public void treeCreate(ArrayList<String> attributes, ArrayList<TreeObject> things){
+	//	System.out.println(things.get(2));
+	//int[] counter = new int[attributes.size()];
+	//counterUpdate(counter, things)
+	/*for (int q: counter){
+	  System.out.print(q + ", ");
+	  }*/
+	
+	_root = treeHelper(/*counter,*/ attributes, things); //Starts the tree;
 	
     }
-    public Node treeHelper( int[] counter, ArrayList<String> attributes, ArrayList<TreeObject> things){
-	Node node = new Node();
+    public Node treeHelper( /*int[] counter*/ ArrayList<String> attributes, ArrayList<TreeObject> things){
+	int[] counter = new int[attributes.size()];
+	counterUpdate(counter, things);
+	    Node node = new Node();
 	if (things.size() == 1){   //If there is one object left, place it in as a leaf
 	    node.setTreeObject(things.remove(0));
 	    return node;
@@ -64,8 +67,8 @@ public class Tree{
 	}
 	
 
-	node.setRight(treeHelper(counter, attributes, yes)); //Creating children
-	node.setLeft(treeHelper(counter, attributes, no));   //Creating children
+	node.setRight(treeHelper(/*counter,*/ attributes, yes)); //Creating children
+	node.setLeft(treeHelper(/*counter,*/ attributes, no));   //Creating children
 
 	return node;
     }
