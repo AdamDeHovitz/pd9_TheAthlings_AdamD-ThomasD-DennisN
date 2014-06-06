@@ -67,11 +67,14 @@ public class Tree{
 	}
 	
 
-	node.setRight(treeHelper(/*counter,*/ attributes, yes)); //Creating children
-	node.setLeft(treeHelper(/*counter,*/ attributes, no));   //Creating children
+	node.setLeft(treeHelper(/*counter,*/ attributes, yes)); //Creating children
+	node.setRight(treeHelper(/*counter,*/ attributes, no));   //Creating children
 
 	return node;
     }
+
+
+    
     public void preOrderTrav() {
 	preOrderTrav( _root );
     }
