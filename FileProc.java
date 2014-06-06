@@ -11,7 +11,26 @@ public class FileProc
 		return new File(filename).exists();
 	}
 
-	public static void seperateByComma(String stringToBreak, ArrayList arrayListToModify)
+	public static void seperateByCommaS(String stringToBreak, ArrayList<String> arrayListToModify)
+	{
+		for (int i = 0; i < stringToBreak.length(); i++)
+		{
+			//System.out.println("i: " + i + stringToBreak.substring(i));
+			int indexOfComma = stringToBreak.indexOf(",",i);
+			//System.out.println("i: " + i + " commaI: " + indexOfComma);
+			if (indexOfComma > 0)
+			{
+			    arrayListToModify.add(stringToBreak.substring(i,indexOfComma));
+				i = indexOfComma;
+			}
+			else
+			{
+				arrayListToModify.add(stringToBreak.substring(i));
+				break;
+			}
+		}
+	}
+	public static void seperateByCommaI(String stringToBreak, ArrayList<Integer> arrayListToModify)
 	{
 		for (int i = 0; i < stringToBreak.length(); i++)
 		{
@@ -25,7 +44,7 @@ public class FileProc
 			}
 			else
 			{
-				arrayListToModify.add(stringToBreak.substring(i));
+				arrayListToModify.add(Integer.parseInt(stringToBreak.substring(i)));
 				break;
 			}
 		}
@@ -44,15 +63,15 @@ public class FileProc
 				Scanner fileScan = new Scanner(fileToRead);
 				// Process the attribute names
 				String firstString = fileScan.nextLine();
-				seperateByComma(firstString,(ArrayList)returnValue[0]);
+				seperateByCommaS(firstString,(ArrayList)returnValue[0]);
 				//Process the objects and their attributes
 				while (fileScan.hasNext())
 				{
 					ArrayList<Integer> attrList = new ArrayList<Integer>();
 					String objectName = fileScan.nextLine();
 					String attrString = fileScan.nextLine();
-					seperateByComma(attrString, attrList);
-					((ArrayList)returnValue[1]).add(new TreeObject(objectName, attrList));		
+					seperateByCommaI(attrString, attrList);
+					((ArrayList)returnValue[1]).add(new TreeObject(objectName, (ArrayList<Integer>) attrList));		
 				}
 				}
 			catch (Exception e)

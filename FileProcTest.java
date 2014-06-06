@@ -22,27 +22,27 @@ public class FileProcTest
 		ArrayList<String> testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString1 + "|");
-		FileProc.seperateByComma(testString1,testList);
+		FileProc.seperateByCommaS(testString1,testList);
 		System.out.println(testList);
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString2 + "|");
-		FileProc.seperateByComma(testString2,testList);
+		FileProc.seperateByCommaS(testString2,testList);
 		System.out.println(testList);
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString3 + "|");
-		FileProc.seperateByComma(testString3,testList);
+		FileProc.seperateByCommaS(testString3,testList);
 		System.out.println(testList);
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString4 + "|");
-		FileProc.seperateByComma(testString4,testList);
+		FileProc.seperateByCommaS(testString4,testList);
 		System.out.println(testList);
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString5 + "|");
-		FileProc.seperateByComma(testString5,testList);
+		FileProc.seperateByCommaS(testString5,testList);
 		System.out.println(testList);
 		testList = new ArrayList<String>();
 	}
@@ -85,27 +85,27 @@ public class FileProcTest
 		ArrayList<String> testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString1 + "|");
-		FileProc.seperateByComma(testString1,testList);
+		FileProc.seperateByCommaS(testString1,testList);
 		System.out.println("Cleaned string: " + FileProc.insertCommasBetween(testList));
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString2 + "|");
-		FileProc.seperateByComma(testString2,testList);
+		FileProc.seperateByCommaS(testString2,testList);
 		System.out.println("Cleaned string: " + FileProc.insertCommasBetween(testList));
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString3 + "|");
-		FileProc.seperateByComma(testString3,testList);
+		FileProc.seperateByCommaS(testString3,testList);
 		System.out.println("Cleaned string: " + FileProc.insertCommasBetween(testList));
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString4 + "|");
-		FileProc.seperateByComma(testString4,testList);
+		FileProc.seperateByCommaS(testString4,testList);
 		System.out.println("Cleaned string: " + FileProc.insertCommasBetween(testList));
 		testList = new ArrayList<String>();
 
 		System.out.println("Testing the string in brackets: |" + testString5 + "|");
-		FileProc.seperateByComma(testString5,testList);
+		FileProc.seperateByCommaS(testString5,testList);
 		System.out.println("Cleaned string: " + FileProc.insertCommasBetween(testList));
 		testList = new ArrayList<String>();
 	}
@@ -142,10 +142,10 @@ public class FileProcTest
 
 	public static void main(String[] args) 
 	{
-		//fileExistsTest();
-		//seperateByCommaTest();
-		//readFileTest();
-		//insertCommasBetweenTest();
-		//saveToFileTest();
+		fileExistsTest();
+		seperateByCommaTest();
+		readFileTest();
+		insertCommasBetweenTest();
+		saveToFileTest();
 	}
 }

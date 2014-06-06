@@ -1,7 +1,7 @@
-Is this object blue?,Is this object red?,Is this object green?
-Adam
+Is it Red?,Is it Tall?,Is it Cool?
+Object 1
 1,0,0
-Thomas
+Object 2
 0,1,0
-Dennis
-0,0,1
+Object 3
+0,1,1

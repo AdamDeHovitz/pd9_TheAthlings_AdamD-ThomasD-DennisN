@@ -6,10 +6,10 @@ public class TreeTester{
 
     public static void main(String[] args){
 	Tree paul = new Tree();
-	//Object[] returnLists = FileProc.readFile("fileproctest.txt");
-	//ArrayList<String> attributeList = (ArrayList<String>) returnLists[0];
-	//ArrayList<TreeObject> objectList = (ArrayList<TreeObject>) returnLists[1];
-	
+	Object[] returnLists = FileProc.readFile("fileproctest.txt");
+	ArrayList<String> attributeList = (ArrayList<String>) returnLists[0];
+	ArrayList<TreeObject> objectList = (ArrayList<TreeObject>) returnLists[1];
+	/*
 	ArrayList<Integer> testArray = new ArrayList<Integer>();
 	testArray.add(1);
 	testArray.add(0);
@@ -36,13 +36,14 @@ public class TreeTester{
 	attributeList.add("Is it Red?");
 	attributeList.add("Is it Tall?");
 	attributeList.add("Is it Cool?");
-	
+	/*
 	System.out.println(testObject1 ); //+ " attribs: " + testObject1.getAttributes());
 	System.out.println(testObject2 ); //+  " attribs: " + testObject2.getAttributes() );
 	System.out.println(testObject3 ); //+  " attribs: " + testObject3.getAttributes());
-	
+	*/
 	paul.treeCreate(attributeList, objectList);
 	paul.preOrderTrav();
+	
 
 	
     }
