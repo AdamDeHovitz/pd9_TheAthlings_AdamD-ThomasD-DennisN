@@ -38,3 +38,6 @@ What a great DevLog!
 (6/6)
 -Thomas will run tests on Adam's code.
 -Dennis fixed file processing.
+
+(6/12)
+-All that remains is a sample dataset for a demonstration, the GUI, and a method to add objects to the tree. 
