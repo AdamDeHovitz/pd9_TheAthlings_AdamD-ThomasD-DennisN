@@ -113,7 +113,7 @@ public class Game{
 	    }
 	}
 	//TreeObject novel = new TreeObject(name, properties);
-
+	System.out.println(name+ " has been added to my information");
 	_main.treeCreate(attributeList, objectList);
 
     }
@@ -134,6 +134,7 @@ public class Game{
 		henry.addToAttributes(0);
 	    }
 	}
+	System.out.println("My information has been updated to reflect your input. Thank you");
 	_main.treeCreate(attributeList, objectList);
     }
 	
