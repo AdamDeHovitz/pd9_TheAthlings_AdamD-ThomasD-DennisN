@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Driver{
     private Tree _main;
     
-    public Game(){
+    public class Game(){
 	_main  = new Tree();
 	Object[] returnLists = FileProc.readFile("fileproctest.txt");
 	ArrayList<String> attributeList = (ArrayList<String>) returnLists[0];
@@ -28,7 +28,7 @@ public class Driver{
 	   
 	   
 	    System.out.println("Choose an option");
-	    printMain()
+	    printMain();
 	    
 		// create a Scanner object to read from the keyboard
 		Scanner scan = new Scanner(System.in);
