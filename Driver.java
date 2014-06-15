@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class Driver{
     private Tree _main;
     
-    public class Game(){
-	_main  = new Tree();
+    public class Game{
+	Tree _main = new Tree();
 	Object[] returnLists = FileProc.readFile("fileproctest.txt");
 	ArrayList<String> attributeList = (ArrayList<String>) returnLists[0];
 	ArrayList<TreeObject> objectList = (ArrayList<TreeObject>) returnLists[1];
