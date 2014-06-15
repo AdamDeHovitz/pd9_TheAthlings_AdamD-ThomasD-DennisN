@@ -2,10 +2,21 @@ import java.util.ArrayList;
 
 public class Tree{
 
-    public Node _root;
+    private Node _root;
+    //private Node _current;
+
+    
     
 
     public Tree(){
+	//_current = _root;
+    }
+
+    //public Node getCurrentLeft()
+    //{
+	//return _current.getLeft()
+    public Node getRoot(){
+	return _root;
     }
     public void counterUpdate(int[] counter, ArrayList<TreeObject> things){
 	

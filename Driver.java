@@ -36,7 +36,7 @@ public class Driver{
 	    // read what the user types
 	    String select = scan.next();
 	    if (select == 1)
-		_main.playRound();
+		playRound();
 
 	    else if(select == 2)
 		saveQuit();
@@ -44,6 +44,24 @@ public class Driver{
 		break;
 	}
     }
+    public void playRound(){
+	playRoundHelper(_main.getRoot());
+    }
+    public void playRoundHelper(Node current){
+	if (current.isQuestion()){
+	    //System.out.println(current);
+	    if (UserProc.readInput(current.getQuestion())){
+		playRounderHelper(current.getLeft());
+	    }
+	    else{
+		playRounderHelper(current.getRight());
+	    }
+	}
+	else{
+	    System.out.println("Is it a " + Node.getTreeObject().toString);
+	}
+    }
+
 
     public static void main(String[] args){
 	Game play = new Game();
