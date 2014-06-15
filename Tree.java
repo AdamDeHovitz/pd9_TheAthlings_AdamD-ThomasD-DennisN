@@ -36,6 +36,7 @@ public class Tree{
 	
 
     public void treeCreate(ArrayList<String> attributes, ArrayList<TreeObject> things){
+	System.out.println("start of tree creation");
 	//	System.out.println(things.get(2));
 	//int[] counter = new int[attributes.size()];
 	//counterUpdate(counter, things)
@@ -43,10 +44,11 @@ public class Tree{
 	  System.out.print(q + ", ");
 	  }*/
 	
-	_root = treeHelper(/*counter,*/ attributes, things); //Starts the tree;
+	_root = treeHelper( attributes, things); //Starts the tree;
 	
     }
-    public Node treeHelper( /*int[] counter*/ ArrayList<String> attributes, ArrayList<TreeObject> things){
+    public Node treeHelper(  ArrayList<String> attributes, ArrayList<TreeObject> things){
+
 	int[] counter = new int[attributes.size()];
 	counterUpdate(counter, things);
 	    Node node = new Node();
@@ -76,7 +78,8 @@ public class Tree{
 		no.add(henry);
 	    }
 	}
-	
+	System.out.println("Objects that have " + attributes.get(mostMid) + ": " + yes);
+	System.out.println("Objects that don't have " + attributes.get(mostMid) + ": " + no);
 
 	node.setLeft(treeHelper(/*counter,*/ attributes, yes)); //Creating children
 	node.setRight(treeHelper(/*counter,*/ attributes, no));   //Creating children
