@@ -14,9 +14,10 @@ public class Game{
 	Object[] returnLists = FileProc.readFile("animalsTest.txt");
 	attributeList = (ArrayList<String>) returnLists[0];
 	objectList = (ArrayList<TreeObject>) returnLists[1];
-	System.out.println("Attributes: " + attributeList);
-	System.out.println("Objects: " + objectList);
+	//System.out.println("Attributes: " + attributeList);
+	//System.out.println("Objects: " + objectList);
 	_main.treeCreate(attributeList, objectList);
+	System.out.println("Welcome to guess your item!");
     }
     public void printMain(){ //Prints out the main options
 	String ret="\t 1: Play a game \n\t 2: Save and quit \n\t 3: Quit" /*\n\t 4: View Current War*/;
@@ -25,7 +26,7 @@ public class Game{
     
     public void play(){  //Plays the game, as long as this method loops the game continues.
 
-	System.out.println("Welcome to guess your item!");
+	
 
 	boolean EndGame=false;
 	while(!EndGame){
@@ -57,9 +58,9 @@ public class Game{
     }
     public void playRoundHelper(Node current, ArrayList<Integer> properties){
 	/*if (current.isVoid()){
-	    System.out.println("We don't have you object");
-	    createNew(properties);
-	    }*/
+	  System.out.println("We don't have you object");
+	  createNew(properties);
+	  }*/
 	if (current.isQuestion()){
 	    //System.out.println(current);
 	    if (UserProc.readInput(current.getQuestion())){
@@ -74,6 +75,9 @@ public class Game{
 	}
 	else if (! UserProc.readInput("Is it a " + current.getTreeObject().getName())){
 	    createNew(properties);
+	}
+	else {
+	    System.out.println("Aren't I smart?\nPlay again!");
 	}
     }
     
@@ -109,13 +113,13 @@ public class Game{
 
     }
     public void newAttribute( TreeObject novel, TreeObject conflict){
-	System.out.println("I've detected that your " + novel.getName() + " is identical to my definied " + conflict.getName() + " based on the existing attributes\nPlease give me a new attribute in the form of \"is it <x>?\" (for example \"is it furry\"): ");
+	System.out.println("I've detected that your " + novel.getName() + " is identical to my defined " + conflict.getName() + " based on the existing attributes\nPlease give me a new attribute in the form of \"Is it <x>?\" (for example \"Is it furry\"): ");
 	Scanner scan = new Scanner(System.in);
 	
 	// read what the user types
 	String question = scan.nextLine();
 	attributeList.add(question);
-	System.out.println("I am now going to ask you to define every other object using this attribute. If you give the same answer for " + novel.getName() + " and "  + conflict.getName() + " there will be a error");
+	System.out.println("I am now going to ask you to define every other object using this attribute. If you give the same answer for " + novel.getName() + " and "  + conflict.getName() + " there will be a problem");
 	for (TreeObject henry: objectList){
 	    System.out.print(henry.getName() + ": ");
 	    if( UserProc.readInput(question)){
