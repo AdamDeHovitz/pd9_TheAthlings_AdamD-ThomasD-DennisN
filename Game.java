@@ -44,9 +44,14 @@ public class Game{
 		playRound();
 
 	    else if(select == 2)
-		saveQuit();
+	    {
+			saveQuit();
+			break;
+		}
 	    else if (select == 3)
-		break;
+	    {
+			break;
+		}
 	}
     }
     public void playRound(){
@@ -136,8 +141,11 @@ public class Game{
 
 
     
-    public void saveQuit(){
-	//implemented by Dennis
+    public void saveQuit()
+    {
+    	Object[] saveLists = new Object[] {attributeList, objectList};	
+		FileProc.saveToFile("animalsTest.txt", saveLists);
+
     }
 
     
