@@ -22,6 +22,9 @@ public class TreeObject
     public int getAttributeAt( int index){
 	return _attributes.get(index);
     }
+    public void addToAttributes(int value){
+	_attributes.add(value);
+    }
     public String getName()
     {
 	return _name;

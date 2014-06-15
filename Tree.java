@@ -51,24 +51,31 @@ public class Tree{
 
 	int[] counter = new int[attributes.size()];
 	counterUpdate(counter, things);
-	    Node node = new Node();
+	Node node = new Node();
+	/*if (things.size() == 0){
+	    node.setVoid();
+	    return node;
+	    }*/
 	if (things.size() == 1){   //If there is one object left, place it in as a leaf
 	    node.setTreeObject(things.remove(0));
 	    return node;
 	}
 	int x = things.size() / 2;
-	//for (int q: counter){
-	//  System.out.print(q + ", ");
-	//}
+	if (things.size() < 5){
+	    for (int qp: counter)
+		System.out.print(qp + ", ");
+	}
 	int mostMid = 0; 
-	for (int d = 1; d < counter.length; d++){ 
-	    if ( Math.abs(x - counter[d]) < Math.abs( x - counter[mostMid])){  //Find the most divisive question
+	for (int d = 1; d < counter.length; d++){
+	    if (counter[mostMid] == 0 && counter[d] != 0){ //super specific case
+		mostMid=d;}
+	    else if ( counter[d] != 0 && Math.abs(x - counter[d]) < Math.abs( x - counter[mostMid])){  //Find the most divisive question
 		mostMid = d; 
 	    }
 	}
 	//System.out.println(mostMid);
 	counter[mostMid] = 0;
-	node.setQuestion(attributes.get(mostMid));
+	node.setQuestion(attributes.get(mostMid), mostMid);
 	ArrayList<TreeObject> yes = new ArrayList<TreeObject>();
 	ArrayList<TreeObject> no = new ArrayList<TreeObject>();
 	for (TreeObject henry : things){

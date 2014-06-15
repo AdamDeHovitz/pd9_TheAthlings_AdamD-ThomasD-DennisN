@@ -6,12 +6,14 @@ public class Game{
 	
 	
     private Tree _main;
+    private ArrayList<String> attributeList;
+    private ArrayList<TreeObject> objectList;
     
     public Game(){
 	_main  = new Tree();
 	Object[] returnLists = FileProc.readFile("animalsTest.txt");
-	ArrayList<String> attributeList = (ArrayList<String>) returnLists[0];
-	ArrayList<TreeObject> objectList = (ArrayList<TreeObject>) returnLists[1];
+	attributeList = (ArrayList<String>) returnLists[0];
+	objectList = (ArrayList<TreeObject>) returnLists[1];
 	System.out.println("Attributes: " + attributeList);
 	System.out.println("Objects: " + objectList);
 	_main.treeCreate(attributeList, objectList);
@@ -32,8 +34,8 @@ public class Game{
 	    System.out.println("Choose an option");
 	    printMain();
 	    
-		// create a Scanner object to read from the keyboard
-		Scanner scan = new Scanner(System.in);
+	    // create a Scanner object to read from the keyboard
+	    Scanner scan = new Scanner(System.in);
 
 	    // read what the user types
 	    int select = scan.nextInt();
@@ -47,22 +49,89 @@ public class Game{
 	}
     }
     public void playRound(){
-	playRoundHelper(_main.getRoot());
+	ArrayList<Integer> properties = new ArrayList<Integer>();
+	for (int x = 0; x < attributeList.size(); x++){
+	    properties.add(-1);
+	}
+	playRoundHelper(_main.getRoot(), properties);
     }
-    public void playRoundHelper(Node current){
+    public void playRoundHelper(Node current, ArrayList<Integer> properties){
+	/*if (current.isVoid()){
+	    System.out.println("We don't have you object");
+	    createNew(properties);
+	    }*/
 	if (current.isQuestion()){
 	    //System.out.println(current);
 	    if (UserProc.readInput(current.getQuestion())){
-		playRoundHelper(current.getLeft());
+		properties.set(current.getPlace(), 1);
+		playRoundHelper(current.getLeft(), properties);
 	    }
 	    else{
-		playRoundHelper(current.getRight());
+		properties.set(current.getPlace(), 0);
+		playRoundHelper(current.getRight(), properties);
+		
 	    }
 	}
-	else{
-	    System.out.println("Is it a " + current.getTreeObject().toString());
+	else if (! UserProc.readInput("Is it a " + current.getTreeObject().getName())){
+	    createNew(properties);
 	}
     }
+    
+    public void createNew(ArrayList<Integer> properties){
+	System.out.println("\nI'm going to need you to define your new object so that I can include it into my database");
+	System.out.print("Name: ");
+	// create a Scanner object to read from the keyboard
+	Scanner scan = new Scanner(System.in);
+	
+	// read what the user types
+	String name = scan.nextLine();
+
+	for(int x = 0; x < properties.size(); x++){
+	    if (properties.get(x) == -1){
+		if (UserProc.readInput(attributeList.get(x))){
+		    properties.set(x, 1);}
+		else{
+		    properties.set(x, 0);}
+	    }
+	} 
+	TreeObject novel = new TreeObject(name, properties);
+	objectList.add(novel);
+	for(TreeObject pavel: objectList){
+	    
+	    if ( ( !pavel.getName().equals(name)) && pavel.getAttributes().equals(properties)){
+		newAttribute(novel, pavel);
+		return;
+	    }
+	}
+	//TreeObject novel = new TreeObject(name, properties);
+
+	_main.treeCreate(attributeList, objectList);
+
+    }
+    public void newAttribute( TreeObject novel, TreeObject conflict){
+	System.out.println("I've detected that your " + novel.getName() + " is identical to my definied " + conflict.getName() + " based on the existing attributes\nPlease give me a new attribute in the form of \"is it <x>?\" (for example \"is it furry\"): ");
+	Scanner scan = new Scanner(System.in);
+	
+	// read what the user types
+	String question = scan.nextLine();
+	attributeList.add(question);
+	System.out.println("I am now going to ask you to define every other object using this attribute. If you give the same answer for " + novel.getName() + " and "  + conflict.getName() + " there will be a error");
+	for (TreeObject henry: objectList){
+	    System.out.print(henry.getName() + ": ");
+	    if( UserProc.readInput(question)){
+		henry.addToAttributes(1);
+	    }
+	    else{
+		henry.addToAttributes(0);
+	    }
+	}
+	_main.treeCreate(attributeList, objectList);
+    }
+	
+    
+
+
+    
     public void saveQuit(){
 	//implemented by Dennis
     }

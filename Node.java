@@ -5,23 +5,37 @@ public class Node{
     private boolean isQuestion;
     private Node right;
     private Node left;
+    private int place;
+    private boolean isVoid;
 
     public Node() {
 	right = null;
 	left = null;
+	isVoid = false;
+    }
+    public boolean isVoid(){
+	return isVoid();
+    }
+    
+    public int getPlace(){
+	return place;
     }
     
     public boolean isQuestion(){
 	return isQuestion;
+    }
+    public void setVoid(){
+	isVoid = true;
     }
 
     public void setTreeObject(TreeObject add){
 	thing = add;
 	isQuestion = false;
     }
-    public void setQuestion(String add){
+    public void setQuestion(String add, int placement){
 	isQuestion = true;
 	question = add;
+	place = placement;
     }
     public TreeObject getTreeObject(){
 	return thing;
