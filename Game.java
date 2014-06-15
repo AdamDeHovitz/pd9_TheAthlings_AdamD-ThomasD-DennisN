@@ -31,6 +31,10 @@ public class Game{
 	System.out.println( ret);
     }
     
+    public ArrayList getattributeList(){
+    	return attributeList;
+    }
+    
     public void play(){  //Plays the game, as long as this method loops the game continues.
 
 	
