@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 
 public class Driver{
+<<<<<<< HEAD
     private Tree _main;
     
     public Game(){
@@ -63,6 +64,8 @@ public class Driver{
     }
 
 
+=======
+>>>>>>> FETCH_HEAD
     public static void main(String[] args){
 	Game play = new Game();
 	play.play();
