@@ -13,4 +13,10 @@ demonstration, we recommend animalsTest.txt, a basic list of a a few animals and
 growth. Following this, the computer will ask you to either play, save and quit, or just quit, all relatively 
 self-explanatory. If you play a round, the computer will ask you a series of questions as described earlier, culminating
 with a guess as to what the object is.
-Finally, if you're feeling particularly adventurous, try uncommenting 
+Finally, if you're feeling particularly adventurous, try uncommenting the line //new GuiApp(_main.getRoot()); and 
+commenting out the line playRound();. This will replace out default interface with an experimental GUI (emphasis on
+experimental). This was one of our prototype features that we could not entirely get to work, so play with it at your own
+risk. Thanks for viewing our project!
+-The Athelings
+
+P.S. Dennis is a bully.
