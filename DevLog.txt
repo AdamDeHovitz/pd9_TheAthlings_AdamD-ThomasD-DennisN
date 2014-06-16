@@ -40,4 +40,13 @@ What a great DevLog!
 -Dennis fixed file processing.
 
 (6/12)
--All that remains is a sample dataset for a demonstration, the GUI, and a method to add objects to the tree. 
+-All that remains is a sample dataset for a demonstration, the GUI,
+and a method to add objects to the tree. 
+
+(6/14 - 6/15)
+- Made code function
+- Added mechanism to define a new object
+- Added mechanism to include a new attibute
+- Allowed for "save files"
+- Got things working
+- Dialogue/user experience adjustments
