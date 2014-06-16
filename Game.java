@@ -47,8 +47,8 @@ public class Game{
 	    // read what the user types
 	    int select = Integer.parseInt(UserProc.readStringInput("Choose an option"));
 	    if (select == 1)
-		//playRound();
-		new GuiApp(_main.getRoot());
+		playRound();
+		//new GuiApp(_main.getRoot());
 
 	    else if(select == 2)
 	    {
